@@ -14,6 +14,7 @@
             <p>Transform conflict into connection.</p>
             <nav class="main-nav">
                 <a href="/philosophy" class="nav-link">Why NVC + ACIM?</a>
+                <a href="/journal" class="nav-link" style="margin-left: 1rem;">My Journal</a>
             </nav>
         </header>
 
@@ -29,7 +30,11 @@
                     <div class="result">
                         <h3>Translation:</h3>
                         <p><%= translation %></p>
-                        <button class="btn-secondary">Save to Journal</button>
+                        <form action="/save" method="POST">
+                            <input type="hidden" name="thought" value="<%= thought %>">
+                            <input type="hidden" name="translation" value="<%= translation %>">
+                            <button type="submit" class="btn-secondary">Save to Journal</button>
+                        </form>
                     </div>
                 <% } %>
             </section>

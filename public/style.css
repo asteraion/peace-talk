@@ -231,3 +231,45 @@ footer {
         transform: translateY(0);
     }
 }
+
+/* Journal & Buttons */
+.btn-secondary {
+    background-color: var(--secondary);
+    color: #fff;
+    border: none;
+    margin-top: 1rem;
+}
+
+.btn-secondary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.result {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.journal-entry .meta {
+    font-size: 0.8rem;
+    color: var(--subtle-text);
+    margin-bottom: 0.5rem;
+}
+
+.journal-entry .original {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #eee;
+}
+
+.journal-entry .original p {
+    font-style: italic;
+    color: #888;
+    margin: 0.2rem 0;
+}
+
+.journal-entry .translation p {
+    color: var(--primary);
+    margin: 0.2rem 0;
+}

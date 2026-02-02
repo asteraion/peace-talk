@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const lessons = require('./data/lessons.json');
 const { translateToNVC } = require('./lib/nvc');
+const { saveEntry, getRecentEntries } = require('./lib/db');
 const app = express();
 const port = 3001;
 
@@ -16,7 +17,8 @@ app.get('/', (req, res) => {
     res.render('index', { 
         title: 'PeaceTalk',
         lesson: null,
-        translation: null 
+        translation: null,
+        thought: null
     });
 });
 
@@ -26,7 +28,22 @@ app.post('/translate', (req, res) => {
     res.render('index', {
         title: 'PeaceTalk',
         lesson: null,
-        translation: translation
+        translation: translation,
+        thought: thought
+    });
+});
+
+app.post('/save', (req, res) => {
+    const { thought, translation } = req.body;
+    saveEntry(thought, translation);
+    res.redirect('/journal');
+});
+
+app.get('/journal', (req, res) => {
+    const entries = getRecentEntries();
+    res.render('journal', {
+        title: 'My Journal | PeaceTalk',
+        entries: entries
     });
 });
 
@@ -35,7 +52,8 @@ app.get('/lesson', (req, res) => {
     res.render('index', {
         title: 'PeaceTalk',
         lesson: randomLesson,
-        translation: null
+        translation: null,
+        thought: null
     });
 });
 
