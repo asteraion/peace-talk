@@ -1,0 +1,15 @@
+# Progress: PeaceTalk MVP
+
+## Status
+IN_PROGRESS
+
+## Tasks
+- [ ] Initialize project and git repo.
+- [ ] Create `server.js` with basic Express setup.
+- [ ] Create `views/index.ejs` (Home) and `views/layout.ejs`.
+- [ ] Implement ACIM Lesson logic (create `data/lessons.json` and API route).
+- [ ] Implement NVC Translator UI and basic logic (mock function).
+- [ ] Implement SQLite database for Journal.
+- [ ] Add "Save" and "List" functionality for Journal.
+- [ ] Style the application with CSS (`public/style.css`).
+- [ ] Final Review: Ensure app runs on port 3000.
