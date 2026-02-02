@@ -39,6 +39,12 @@ app.get('/lesson', (req, res) => {
     });
 });
 
+app.get('/philosophy', (req, res) => {
+    res.render('philosophy', {
+        title: 'Philosophy | PeaceTalk'
+    });
+});
+
 app.listen(port, () => {
     console.log(`PeaceTalk running at http://localhost:${port}`);
 });

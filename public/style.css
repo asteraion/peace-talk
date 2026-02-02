@@ -6,6 +6,7 @@
     --text-color: #333333;
     --subtle-text: #666666;
     --font-family: 'Outfit', sans-serif;
+    --serif-font: 'Playfair Display', serif;
 }
 
 body {
@@ -96,4 +97,137 @@ footer {
     color: var(--subtle-text);
     font-size: 0.9rem;
     margin-top: 2rem;
+}
+
+/* Navigation */
+.main-nav {
+    margin-top: 1rem;
+}
+
+.nav-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.nav-link:hover {
+    border-bottom-color: var(--primary);
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--subtle-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.back-link:hover {
+    color: var(--primary);
+}
+
+/* Philosophy Page */
+.philosophy-page {
+    max-width: 800px;
+}
+
+.subtitle {
+    font-family: var(--serif-font);
+    font-style: italic;
+    color: var(--subtle-text);
+    font-size: 1.2rem;
+}
+
+.concept-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .concept-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.concept h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.concept.acim h3 {
+    color: var(--secondary);
+    color: #9b59b6; /* Purple for spiritual/ACIM */
+}
+
+.tagline {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: var(--subtle-text);
+}
+
+.icon-divider {
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem 0;
+    opacity: 0.5;
+}
+
+.lead-text {
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #444;
+}
+
+.principles-list {
+    list-style: none;
+    padding: 0;
+}
+
+.principles-list li {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--secondary);
+    line-height: 1.6;
+}
+
+.quote-card {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    text-align: center;
+    padding: 3rem;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.quote-card blockquote {
+    font-family: var(--serif-font);
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin: 0 0 1rem 0;
+    font-style: italic;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
