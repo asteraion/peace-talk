@@ -18,6 +18,27 @@ app.get('/', (req, res) => {
     });
 });
 
+app.post('/translate', (req, res) => {
+    const thought = req.body.thought;
+    // Mock translation for now
+    const translation = `When you see [Observation], you feel [Feeling] because you need [Need].`;
+    res.render('index', {
+        title: 'PeaceTalk',
+        lesson: null,
+        translation: translation
+    });
+});
+
+app.get('/lesson', (req, res) => {
+    // Mock lesson
+    const lesson = { text: "Nothing real can be threatened.", source: "ACIM Intro" };
+    res.render('index', {
+        title: 'PeaceTalk',
+        lesson: lesson,
+        translation: null
+    });
+});
+
 app.listen(port, () => {
     console.log(`PeaceTalk running at http://localhost:${port}`);
 });

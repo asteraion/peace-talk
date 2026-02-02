@@ -1,1 +1,56 @@
-<h1>Welcome to PeaceTalk</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PeaceTalk ⭐</h1>
+            <p>Transform conflict into connection.</p>
+        </header>
+
+        <main>
+            <!-- NVC Section -->
+            <section class="card translator-card">
+                <h2>Speak from the Heart</h2>
+                <form action="/translate" method="POST">
+                    <textarea name="thought" placeholder="What's on your mind? (e.g. 'He is so lazy!')" required></textarea>
+                    <button type="submit" class="btn-primary">Transform to NVC</button>
+                </form>
+                <% if (translation) { %>
+                    <div class="result">
+                        <h3>Translation:</h3>
+                        <p><%= translation %></p>
+                        <button class="btn-secondary">Save to Journal</button>
+                    </div>
+                <% } %>
+            </section>
+
+            <!-- ACIM Section -->
+            <section class="card lesson-card">
+                <h2>Daily Wisdom</h2>
+                <div id="lesson-display">
+                    <% if (lesson) { %>
+                        <blockquote>"<%= lesson.text %>"</blockquote>
+                        <cite>— <%= lesson.source %></cite>
+                    <% } else { %>
+                        <p>Click below to receive today's lesson.</p>
+                    <% } %>
+                </div>
+                <form action="/lesson" method="GET">
+                    <button type="submit" class="btn-outline">Get Lesson</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>Made with Love & AI.</p>
+        </footer>
+    </div>
+</body>
+</html>
