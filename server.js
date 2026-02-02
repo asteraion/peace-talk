@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const lessons = require('./data/lessons.json');
 const app = express();
 const port = 3001;
 
@@ -30,11 +31,10 @@ app.post('/translate', (req, res) => {
 });
 
 app.get('/lesson', (req, res) => {
-    // Mock lesson
-    const lesson = { text: "Nothing real can be threatened.", source: "ACIM Intro" };
+    const randomLesson = lessons[Math.floor(Math.random() * lessons.length)];
     res.render('index', {
         title: 'PeaceTalk',
-        lesson: lesson,
+        lesson: randomLesson,
         translation: null
     });
 });
