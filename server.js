@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const lessons = require('./data/lessons.json');
+const { translateToNVC } = require('./lib/nvc');
 const app = express();
 const port = 3001;
 
@@ -21,8 +22,7 @@ app.get('/', (req, res) => {
 
 app.post('/translate', (req, res) => {
     const thought = req.body.thought;
-    // Mock translation for now
-    const translation = `When you see [Observation], you feel [Feeling] because you need [Need].`;
+    const translation = translateToNVC(thought);
     res.render('index', {
         title: 'PeaceTalk',
         lesson: null,

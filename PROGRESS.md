@@ -8,7 +8,7 @@ IN_PROGRESS
 - [x] Create `server.js` with basic Express setup.
 - [x] Create `views/index.ejs` (Home) and `views/layout.ejs`.
 - [x] Implement ACIM Lesson logic (create `data/lessons.json` and API route).
-- [ ] Implement NVC Translator UI and basic logic (mock function).
+- [x] Implement NVC Translator UI and basic logic (mock function).
 - [ ] Implement SQLite database for Journal.
 - [ ] Add "Save" and "List" functionality for Journal.
 - [ ] Style the application with CSS (`public/style.css`).
