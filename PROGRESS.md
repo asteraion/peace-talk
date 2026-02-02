@@ -9,6 +9,7 @@ IN_PROGRESS
 - [x] Create `views/index.ejs` (Home) and `views/layout.ejs`.
 - [x] Implement ACIM Lesson logic (create `data/lessons.json` and API route).
 - [x] Implement NVC Translator UI and basic logic (mock function).
+- [x] Deploy to server (PM2 + Nginx reverse proxy).
 - [ ] Implement SQLite database for Journal.
 - [ ] Add "Save" and "List" functionality for Journal.
 - [ ] Style the application with CSS (`public/style.css`).
